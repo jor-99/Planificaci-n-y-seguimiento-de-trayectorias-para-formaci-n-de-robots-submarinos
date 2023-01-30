@@ -20,8 +20,6 @@ function [alpha, beta] = CorrigeAngulo(pO,posicion)
 
     alpha = atan2(vector(2),vector(1));
     beta = acos((vector(1)*proyeccion(1)+vector(2)*proyeccion(2)+vector(3)*proyeccion(3))/((sqrt(vector(1)*vector(1)+vector(2)*vector(2)+vector(3)*vector(3)))*sqrt(proyeccion(1)*proyeccion(1)+proyeccion(2)*proyeccion(2)+proyeccion(3)*proyeccion(3))));
-    %beta = acos(recorrido(1)/(sqrt(recorrido(1)*recorrido(1) + recorrido(2)*recorrido(2) + recorrido(3)*recorrido(3))));
-    %beta = atan2(recorrido(3),recorrido(1));
     rad2deg(alpha);
     rad2deg(beta);%mirar
     posicion(6) = posicion(6)*(pi/180);
@@ -29,7 +27,6 @@ function [alpha, beta] = CorrigeAngulo(pO,posicion)
 
     alpha = alpha - posicion(6);
    
-    %Posible mejora
     if((vector(3)>0) && (abs(posicion(5))<beta))
         beta = -(beta - posicion(5));
         if ((beta>(pi/2)) && (vector(3)>0))
@@ -42,9 +39,6 @@ function [alpha, beta] = CorrigeAngulo(pO,posicion)
         beta = 360-beta;
         posicion(5) = 180 + posicion(5);
         beta = beta - posicion(5);
-%     elseif((beta>(pi/2)) && (vector(3)>0))
-%         posicion(5) = 180 + posicion(5);
-%         beta = beta - posicion(5)
     else
         beta = beta - posicion(5);
     end

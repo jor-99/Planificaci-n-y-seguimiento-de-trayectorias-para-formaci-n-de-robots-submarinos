@@ -1,5 +1,5 @@
 function [v_angxy,v_angxz,pO,Alpha] = PurePursuit(posicion,pO_ant,pO_sig,v)
-    lookAhead=8;%m
+    lookAhead=10;%m
     posicion = posicion.';
 
     err = errpos(posicion(1:3),pO_ant(1:3),pO_sig(1:3));%Error de posición

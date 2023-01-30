@@ -16,17 +16,9 @@ function Trayectoria=Recta(PI)
     Trayectoria=PI;
     path=PI;
 
-%     for i=11:91
-%         path = [i;PI(2);PI(3)];
-%         Trayectoria = [Trayectoria path];
-%     end
-
-    for i=21:60%Recta
+    for i=21:91
         path = [i;PI(2);PI(3)];
         Trayectoria = [Trayectoria path];
     end
-    for i=1:30
-        path = [60-i*0.5773;51+i;PI(3)];
-        Trayectoria = [Trayectoria path];
-    end
+
 end

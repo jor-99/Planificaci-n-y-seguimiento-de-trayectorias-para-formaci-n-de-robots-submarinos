@@ -99,7 +99,7 @@ while(~EnPosFinal)
     end
 
     %Función calculo de error de posicion y orientación
-     [err]=Errpos(posicion(1:3),Ta);
+    [err]=Errpos(posicion(1:3),Ta);
     [distF1, distF2, distFoll]=posLF(posicion(1:3),posicionesF(1:3),posicionesF(7:9));
     
     %Datos de la simulación
@@ -118,17 +118,17 @@ end
 %==========================================================================
 i=0:1:i;%Se transforma la variable en un vector (tiempo transcurrido).
 
-figure%Error de posición
-plot(i,error), grid on
-title('Error de posicion respecto a la trayectoria')
-xlabel('t[s]')
-ylabel('m')
-
-figure%Error de orientación
-plot(i,epsi), grid on
-title('Diferencia de orientación respecto al punto objetivo')
-xlabel('t[s]')
-ylabel('Grados')
+% figure%Error de posición
+% plot(i,error), grid on
+% title('Error de posicion respecto a la trayectoria')
+% xlabel('t[s]')
+% ylabel('m')
+% 
+% figure%Error de orientación
+% plot(i,epsi), grid on
+% title('Diferencia de orientación respecto al punto objetivo')
+% xlabel('t[s]')
+% ylabel('Grados')
 
 % figure%Error de posición
 % plot(i,distLF1), hold on
