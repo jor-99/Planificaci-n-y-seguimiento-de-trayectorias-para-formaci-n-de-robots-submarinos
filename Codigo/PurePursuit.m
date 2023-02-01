@@ -1,4 +1,26 @@
 function [v_angxy,v_angxz,pO,Alpha] = PurePursuit(posicion,pO_ant,pO_sig,v)
+%==========================================================================
+%   Nombre: PurePursuit
+%
+%   Esta función se encarga de realizar el sistema de control de
+%   seguimiento de trayectoria purepursuit, donde se calcula la siguiente
+%   posición del punto objetivo en función del avance del robot. Tambien se
+%   calculan las velocidades necesarias para alcanzar dicho punto.
+%
+%   Entradas:
+%   posicion = Variable compuesta por las coordenas del robot.
+%   pO_ant = Punto objetivo anterior.
+%   pO_sig = Punto objetivo actual.
+%   v = velocidad del AUV.
+%
+%   Salidas:
+%   v_angxy = Variable que devuelve la velocidad angular sobre el guiñado.
+%   v_angxz = Variable que devuelve la velocidad angular sobre el cabeceo.
+%   pO = variable que devuelve la posición del punto objetivo calculado.
+%   Alpha = Devuelve la diferencia de orientacion entre el AUV y el punto
+%   objetivo.
+%
+%==========================================================================
     lookAhead=10;%m
     posicion = posicion.';
 

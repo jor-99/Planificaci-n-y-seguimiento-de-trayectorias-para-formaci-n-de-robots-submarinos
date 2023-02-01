@@ -1,4 +1,32 @@
 clc; clear all; close all;
+%==========================================================================
+%   main.m
+%
+%   Función principal de la simulación, se estructura de la siguiente
+%   manera:
+%
+%   - Generar mapa: Se definen las variables y las funciones necesarias para
+%   poder generar el entorno de la simulación.
+%   - Generador de trayectoria: Se definen las variables y las funciones
+%   necesarias para generar la trayectoria. 
+%   - Variables para la simulacion: Se determinan todas las variables
+%   necesarias para el desarrollo de la simulacion. Estan dicididas en
+%   categorias.
+%   - Bucle de simulación: Formado por un bucle while con una condición de
+%   salida (cuando el robot llega al punto objetivo), las funciones
+%   necesarias para el desarrollo del purepursuit, cinemática y la
+%   formación de AUVs. También se almacenan las variables necesarias para
+%   los resultados y las funciones necesarias para dibujar la simulación.
+%   - Gráficas: En esta sección se muestran las gráficas de los resultados
+%   obtenidos (comentadas por defecto).
+%   - Funcion EnPos: Función que expone el criterio empleado para
+%   determinar si el robot ha llegado a su destino. 
+%
+%   La opción por defecto si se corre el código sin realizar un cambio es
+%   la formación de AUVs siguiendo una linea recta, para cambiar y realizar
+%   otras simulaciones se recomienda ver antes el README del repositorio. 
+%
+%==========================================================================
 
 %Generar mapa
 %==========================================================================
@@ -6,7 +34,7 @@ TipoM=1;%Variable para elegir el tipo de mapa
 Wo=Fmapa(TipoM);
 %==========================================================================
      
-%Generador de barrido
+%Generador de trayectoria
 %==========================================================================
 TipoF=1;%Variable para elegir el tipo de trayectoria
 [Ta, PI, LookAhead, LA]=GestorFunciones(Wo, TipoF);
