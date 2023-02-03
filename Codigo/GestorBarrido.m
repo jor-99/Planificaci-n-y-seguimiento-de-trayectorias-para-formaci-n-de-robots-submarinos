@@ -1,14 +1,14 @@
-function path_done = GestorBarrido(start, finish, C, n, W)
+function path_done = GestorBarrido(start, finish, n, W)
 %==========================================================================
 %   Nombre: GestorBarrido
 %
-%   Esta función se encarga de generar el barrido en funcion del 
-%   cuadrante en el que se encuentre el robot.
+%   Esta función se encarga de generar el barrido del robot. Esta
+%   estructura esta pensada para poder generar mas barridos desde distintos
+%   puntos o distintas direcciones con mayor facilidad.
 %
 %   Entradas:
 %   start = Punto inicial del robot.
 %   finish = Punto final del robot.
-%   C = Cuadrante del robot.
 %   n = Limite que acota el area de barrido.
 %   W = Matriz de 3 dimensiones formada por 1 y 0 que conforman el mapa.
 %
@@ -20,15 +20,6 @@ function path_done = GestorBarrido(start, finish, C, n, W)
     tx=abs(finish(1)-start(1)); %Anchura de barrido en x.
     ty=abs(finish(2)-start(2)); %Anchura de barrido en y.
 
+    path_done = Barrer_1(start, tx, ty, n, W);
 
-    switch(C)
-        case 1
-            path_done = Barrer_1(start, tx, ty, n, W);
-        case 2
-            path_done = Barrer_2(start, tx, ty, n, W);
-        case 3
-            path_done = Barrer_3(start, tx, ty, n, W);
-        case 4
-            path_done = Barrer_4(start, tx, ty, n, W);
-    end
 end

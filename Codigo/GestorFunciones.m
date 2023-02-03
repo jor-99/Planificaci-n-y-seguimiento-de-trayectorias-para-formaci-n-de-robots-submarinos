@@ -42,8 +42,8 @@ function [Trayectoria, PI,LookAhead,LA]=GestorFunciones(Wo,TipoF)
             LA=7;
             PI=[10;10;40];
             n=20;
-            [PI, PF, C] = PuntoCuadrante(Wo,PI,n);
-            Trayectoria=GestorBarrido(PI,PF,C,n,Wo);
+            [PI, PF] = PuntoCuadrante(Wo,n);
+            Trayectoria=GestorBarrido(PI,PF,n,Wo);
             PI=[PI;0;0;0];
     end
 end
